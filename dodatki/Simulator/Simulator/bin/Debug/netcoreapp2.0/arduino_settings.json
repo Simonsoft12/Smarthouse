@@ -1,0 +1,42 @@
+{
+  "Site": [
+    {
+      "SiteName": "salon",
+      "SiteIP": "192.168.1.81",
+      "Operations": [
+        {
+          "OperationNameOn": "SGon",
+          "OperationNameOff": "SGoff",
+          "OperationParmNameOn": "SwiatloGlowneSalonOn",
+          "OperationParmNameOff": "SwiatloGlowneSalonOff",
+          "OperationReturnString": "SalonG",
+          "OperationReturnStringValue": "0"
+        },
+        {
+          "OperationNameOn": "SJon",
+          "OperationNameOff": "SJoff",
+          "OperationParmNameOn": "SalonJadalniaOn",
+          "OperationParmNameOff": "SalonJadalniaOff",
+          "OperationReturnString": "SalonJ",
+          "OperationReturnStringValue": "1"
+        },
+        {
+          "OperationNameOn": "SPsofaon",
+          "OperationNameOff": "SPsofaoff",
+          "OperationParmNameOn": "SalonPunktoweSofaOn",
+          "OperationParmNameOff": "SalonPunktoweSofaOff",
+          "OperationReturnString": "SalonPsofa",
+          "OperationReturnStringValue": "1"
+        },
+        {
+          "OperationNameOn": "SalonW",
+          "OperationNameOff": "SalonW",
+          "OperationParmNameOn": "SalonWOn",
+          "OperationParmNameOff": "SalonWOff",
+          "OperationReturnString": "SalonW",
+          "OperationReturnStringValue": "1"
+        }
+      ]
+    }
+  ]
+}

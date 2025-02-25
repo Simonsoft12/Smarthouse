@@ -1,0 +1,17 @@
+C:\Users\Simon\source\repos\Smarthouse\dodatki\Simulator\Simulator\bin\Debug\netcoreapp2.0\appsettings.Development.json
+C:\Users\Simon\source\repos\Smarthouse\dodatki\Simulator\Simulator\bin\Debug\netcoreapp2.0\appsettings.json
+C:\Users\Simon\source\repos\Smarthouse\dodatki\Simulator\Simulator\bin\Debug\netcoreapp2.0\arduino_settings.json
+C:\Users\Simon\source\repos\Smarthouse\dodatki\Simulator\Simulator\bin\Debug\netcoreapp2.0\bundleconfig.json
+C:\Users\Simon\source\repos\Smarthouse\dodatki\Simulator\Simulator\bin\Debug\netcoreapp2.0\Properties\launchSettings.json
+C:\Users\Simon\source\repos\Smarthouse\dodatki\Simulator\Simulator\bin\Debug\netcoreapp2.0\ArduinoSimulator.deps.json
+C:\Users\Simon\source\repos\Smarthouse\dodatki\Simulator\Simulator\bin\Debug\netcoreapp2.0\ArduinoSimulator.runtimeconfig.json
+C:\Users\Simon\source\repos\Smarthouse\dodatki\Simulator\Simulator\bin\Debug\netcoreapp2.0\ArduinoSimulator.runtimeconfig.dev.json
+C:\Users\Simon\source\repos\Smarthouse\dodatki\Simulator\Simulator\bin\Debug\netcoreapp2.0\ArduinoSimulator.dll
+C:\Users\Simon\source\repos\Smarthouse\dodatki\Simulator\Simulator\bin\Debug\netcoreapp2.0\ArduinoSimulator.pdb
+C:\Users\Simon\source\repos\Smarthouse\dodatki\Simulator\Simulator\obj\Debug\netcoreapp2.0\ArduinoSimulator.csprojAssemblyReference.cache
+C:\Users\Simon\source\repos\Smarthouse\dodatki\Simulator\Simulator\obj\Debug\netcoreapp2.0\ArduinoSimulator.AssemblyInfoInputs.cache
+C:\Users\Simon\source\repos\Smarthouse\dodatki\Simulator\Simulator\obj\Debug\netcoreapp2.0\ArduinoSimulator.AssemblyInfo.cs
+C:\Users\Simon\source\repos\Smarthouse\dodatki\Simulator\Simulator\obj\Debug\netcoreapp2.0\ArduinoSimulator.csproj.CoreCompileInputs.cache
+C:\Users\Simon\source\repos\Smarthouse\dodatki\Simulator\Simulator\obj\Debug\netcoreapp2.0\ArduinoSimulator.dll
+C:\Users\Simon\source\repos\Smarthouse\dodatki\Simulator\Simulator\obj\Debug\netcoreapp2.0\ArduinoSimulator.pdb
+C:\Users\Simon\source\repos\Smarthouse\dodatki\Simulator\Simulator\obj\Debug\netcoreapp2.0\ArduinoSimulator.genruntimeconfig.cache

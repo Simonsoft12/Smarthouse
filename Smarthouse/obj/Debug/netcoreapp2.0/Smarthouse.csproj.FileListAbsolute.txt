@@ -1,0 +1,17 @@
+C:\Users\Simon\Source\Repos\Smarthouse\Smarthouse\bin\Debug\netcoreapp2.0\appsettings.Development.json
+C:\Users\Simon\Source\Repos\Smarthouse\Smarthouse\bin\Debug\netcoreapp2.0\appsettings.json
+C:\Users\Simon\Source\Repos\Smarthouse\Smarthouse\bin\Debug\netcoreapp2.0\bundleconfig.json
+C:\Users\Simon\Source\Repos\Smarthouse\Smarthouse\bin\Debug\netcoreapp2.0\package.json
+C:\Users\Simon\Source\Repos\Smarthouse\Smarthouse\bin\Debug\netcoreapp2.0\Properties\launchSettings.json
+C:\Users\Simon\Source\Repos\Smarthouse\Smarthouse\bin\Debug\netcoreapp2.0\Smarthouse.deps.json
+C:\Users\Simon\Source\Repos\Smarthouse\Smarthouse\bin\Debug\netcoreapp2.0\Smarthouse.runtimeconfig.json
+C:\Users\Simon\Source\Repos\Smarthouse\Smarthouse\bin\Debug\netcoreapp2.0\Smarthouse.runtimeconfig.dev.json
+C:\Users\Simon\Source\Repos\Smarthouse\Smarthouse\bin\Debug\netcoreapp2.0\Smarthouse.dll
+C:\Users\Simon\Source\Repos\Smarthouse\Smarthouse\bin\Debug\netcoreapp2.0\Smarthouse.pdb
+C:\Users\Simon\Source\Repos\Smarthouse\Smarthouse\obj\Debug\netcoreapp2.0\Smarthouse.csprojAssemblyReference.cache
+C:\Users\Simon\Source\Repos\Smarthouse\Smarthouse\obj\Debug\netcoreapp2.0\Smarthouse.AssemblyInfoInputs.cache
+C:\Users\Simon\Source\Repos\Smarthouse\Smarthouse\obj\Debug\netcoreapp2.0\Smarthouse.AssemblyInfo.cs
+C:\Users\Simon\Source\Repos\Smarthouse\Smarthouse\obj\Debug\netcoreapp2.0\Smarthouse.csproj.CoreCompileInputs.cache
+C:\Users\Simon\Source\Repos\Smarthouse\Smarthouse\obj\Debug\netcoreapp2.0\Smarthouse.dll
+C:\Users\Simon\Source\Repos\Smarthouse\Smarthouse\obj\Debug\netcoreapp2.0\Smarthouse.pdb
+C:\Users\Simon\Source\Repos\Smarthouse\Smarthouse\obj\Debug\netcoreapp2.0\Smarthouse.genruntimeconfig.cache

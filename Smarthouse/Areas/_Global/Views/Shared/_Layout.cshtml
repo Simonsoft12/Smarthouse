@@ -1,0 +1,76 @@
+﻿@using Microsoft.AspNetCore.Mvc;
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Smarthouse</title>
+
+    <environment>
+        <link rel="stylesheet" href="~/css/site.css" />
+        <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="~/lib/toastr/toastr.css" />
+        <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="~/lib/font-awesome-animation/dist/font-awesome-animation.min.css" />
+    </environment>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Applikacja</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" asp-area="Home" asp-controller="Home" asp-action="Index">Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-area="Home" asp-controller="Home" asp-action="About">About<span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-area="Home" asp-controller="Home" asp-action="Contact">Contact<span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-area="Admin" asp-controller="Admin" asp-action="Index">Admin<span class="sr-only"></span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <div class="row text-muted ">
+                <p class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
+                    &copy; 2021 - Smarthouse
+                </p>
+                <span class="hidden-xs col-xs-12 col-sm-2 col-md-2 col-lg-2 text-center">
+                    <span class="fa fa-home"> </span>
+                    <span></span>
+                </span>
+                <p class="col-xs-12 col-sm-5 col-md-5 col-lg-5 " title="Bieżąca data">
+                    <span class="pull-right">
+                        <span class="fa fa-calendar"></span>
+                        <span id='date-part'></span>
+                    </span>
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <environment>
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/js/bootstrap.min.js"></script>
+        <script src="~/lib/toastr/toastr.min.js"></script>
+        <script src="~/lib/moment/moment.js"></script>
+        <script src="~/js/site.js"></script>
+        <script src="~/js/gauge.min.js"></script>
+
+
+
+    </environment>
+    @RenderSection("Scripts", required: true)
+</body>
+</html>

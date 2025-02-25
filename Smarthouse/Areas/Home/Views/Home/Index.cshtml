@@ -1,0 +1,213 @@
+﻿@{
+    ViewData["Title"] = "Smarthouse Home Page";
+}
+
+
+<div class="card bg-light mb-3 mt-3">
+    <div class="card-header" data-sitename="Dom">
+        <span class="fa fa-home mr-2"> </span>
+        Dom
+    </div>
+</div>
+<!-- Zamiast ukrywać , to skróty
+<div class="card-columns">-->
+
+<div class="card bg-light text-center mb-3">
+    <div class="card-header" id="Salon">
+        Salon
+    </div>
+    <div class="card-body" data-sitename="Salon">
+        <div class="row">
+            <div class="col col-xs-12 col-sm-12 col-md-6 col-lg-6 text-center">
+                <div class="row text-center mt-3">
+                    <div class="col col-xs-12 col-sm-12 col-md-4 col-lg-4 text-lg-right">Główne światło</div>
+                    <div class="col col-xs-8 col-sm-8 col-md-8 col-lg-8" id="SalonG"></div>
+                </div>
+                <div class="row text-center mt-3">
+                    <div class="col col-xs-12 col-sm-12 col-md-4 col-lg-4 text-lg-right">Jadalnia światło</div>
+                    <div class="col col-xs-8 col-sm-8 col-md-8 col-lg-8" id="SalonJ"></div>
+                </div>
+                <div class="row text-center mt-3">
+                    <div class="col col-xs-12 col-sm-12 col-md-4 col-lg-4 text-lg-right">Punktowe Sofa</div>
+                    <div class="col col-xs-8 col-sm-8 col-md-8 col-lg-8" id="SalonPsofa"></div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col col-xs-12 col-sm-12 col-md-4 col-lg-4 text-lg-right">
+                        Okno tarasowe:
+                    </div>
+                    <div class="col col-xs-12 col-sm-12 col-md-6 col-lg-6 text-lg-left" id="SalonO"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts{
+    <script>
+        // wywołanie akcji pobierającej wszystkie dane wskaźników
+            Initialization();
+
+        // odświeżanie strony co 5 sek.
+       // setInterval(GetSensorInformation, 10000);
+
+        function Initialization() {
+            var URL = '@Url.Action("GetSensorsInformation")';
+            $.ajax({
+                url: URL,
+                //data: { 'site': siteName },
+                type: "POST",
+                cache: false,
+                // typ danych, jaki chcemy otrzymać
+                dataType: 'json',
+                beforeSend: function () {
+
+                },
+                success: function (result) {
+                    console.log(result);
+                    if (result.status == "Error") toastrConfiguration(result.status, result.message);
+                 //   else {
+                       // if (result.status == "Success") toastrConfiguration(result.status, result.message);
+                    sensors = result.model.sensorValueModelCollection;
+                    buttons = result.model.operationParmForButtonsCollection;
+                    DisplayValuesGenerator(sensors, buttons);
+               //     }
+                },
+                error: function (xhr, status) {
+                    toastrConfiguration(result.status, result.message)
+                },
+                // kod, który ma zostać wykonany bez względu na to, czy żądanie zostało zakończone powodzeniem, czy nie
+                complete: function (xhr, status) {
+                }
+            });
+        }
+
+
+        function GetSensorInformation(siteName) {
+            var URL = '@Url.Action("GetSensorsInformation")';
+            $.ajax({
+                url: URL,
+                data: { 'site': siteName },
+                type: "POST",
+                cache: false,
+                // typ danych, jaki chcemy otrzymać
+                dataType: 'json',
+                beforeSend: function () {
+
+                },
+                success: function (result) {
+
+                    if (result.status == "Error") toastrConfiguration(result.status, result.message);
+                   // else {
+                       // if (result.status == "Success") toastrConfiguration(result.status, result.message);
+                    sensors = result.model.sensorValueModelCollection;
+                    buttons = result.model.operationParmForButtonsCollection;
+                  //  setTimeout(
+                  //      function () {
+                            DisplayValuesGenerator(sensors, buttons);
+                 //       }, 1000);
+
+                 //   }
+                },
+                error: function (xhr, status) {
+                    toastrConfiguration(result.status, result.message)
+                },
+                // kod, który ma zostać wykonany bez względu na to, czy żądanie zostało zakończone powodzeniem, czy nie
+                complete: function (xhr, status) {
+                }
+            });
+        }
+
+
+        function SendCommand(site, operation) {
+            var URL = '@Url.Action("SendCommand")';
+
+            $.ajax({
+                url: URL,
+                data: { 'site': site,
+                        'operation': operation
+                      },
+                type: "POST",
+                cache: false,
+                dataType: 'json',
+
+                beforeSend: function () {},
+                success: function (result) {
+                    if (result.status == "Error") toastrConfiguration(result.status, result.message);
+                    else {
+                     //   if (result.status == "Success") toastrConfiguration(result.status, result.message);
+                        sensors = result.model.sensorValueModelCollection;
+                        buttons = result.model.operationParmForButtonsCollection;
+                        DisplayValuesGenerator(sensors, buttons);
+                    }
+                },
+                error: function (xhr, status) {
+                    toastrConfiguration(result.status, result.message)
+                },
+
+                // kod, który ma zostać wykonany bez względu na to, czy żądanie zostało zakończone powodzeniem, czy nie
+                complete: function (xhr, status) {
+
+                }
+            });
+        }
+
+
+        function GetParmNameForTheButton(model, sensorName) {
+            // alert(sensorName);
+            for (i = 0; i < model.length; i++) {
+                if (model[i].operationReturnString == sensorName)
+                    return model[i].operationParmName;
+            }
+        }
+
+
+        function DisplayValuesGenerator(sensors, buttons) {
+            for (var i = 0; i < sensors.length; i++) {
+                var parmName = GetParmNameForTheButton(buttons, sensors[i].sensorName)
+                var siteName = $("#" + sensors[i].sensorName).parent().parent().parent().parent().data('sitename');
+                GetSensorStatusByType(sensors[i].sensorName, sensors[i].sensorValue, parmName, siteName);
+            }
+        }
+
+
+        function GetSensorStatusByType(sensorName, value, parmName, siteName) {
+           // $("#" + sensorName).empty();
+            var lastChar = sensorName.substr(sensorName.length - 1);
+            //Okno
+            // Tutaj nie potrzeba tego sprawdzania, jesli nie ma odróżnienia jakie to okno
+            if (!parmName && lastChar === "O") {
+                var okno = sensorName.substr(sensorName.length - 2, 1);
+                if (value == 1) {
+                    if (okno == "P") $("#" + sensorName).html('<div class="text-warning">Otwarte</div>');
+                    else if (okno == "L") $("#" + sensorName).html('<div class="text-warning">Otwarte</div>');
+                    else $("#" + sensorName).html('<div class="text-warning">Otwarte</div>');
+                } else if (value == 0) {
+                    if (okno == "P") $("#" + sensorName).html('<div class="text-success">Zamknięte</div>');
+                    else if (okno == "L") $("#" + sensorName).html('<div class="text-success">Zamknięte</div>');
+                    else $("#" + sensorName).html('<div class="text-success">Zamknięte</div>');
+                }
+            }
+            //Światło
+            else if (parmName) {
+                if (value == 0) {
+                    $("#" + sensorName).html('<input type="button" class="on" data-loading-text="Czekaj..." onclick="SendCommand(\'' + siteName + '\', \'' + parmName + 'on\')" />');
+                }
+                else {
+                    $("#" + sensorName).html('<input type="button" class="off" data-loading-text="Czekaj..." onclick="SendCommand(\'' + siteName + '\', \'' + parmName + 'off\')"  />');
+                }
+            }
+            return sensorName;
+        }
+
+
+        $(document).ready(function(){
+                $("#Salon").click(function(){
+                $('*[data-sitename="Salon"]').toggle(1000);
+            });
+        });
+
+    </script>
+}
+

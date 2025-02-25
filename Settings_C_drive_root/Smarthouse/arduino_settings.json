@@ -1,0 +1,33 @@
+{
+  "Site": [
+    {
+      "SiteName": "Salon",
+      "SiteIP": {
+        "MainIPAddress": "192.168.1.91",
+        "AdditionalIPAddresses": null
+      },
+      "Operations": [
+        {
+          "OperationParmName": "SG",
+          "OperationReturnString": "SalonG",
+          "OperationReturnStringValue": "1"
+        },
+        {
+          "OperationParmName": "SJ",
+          "OperationReturnString": "SalonJ",
+          "OperationReturnStringValue": "1"
+        },
+        {
+          "OperationParmName": "SPsofa",
+          "OperationReturnString": "SalonPsofa",
+          "OperationReturnStringValue": "1"
+        },
+        {
+          "OperationParmName": null,
+          "OperationReturnString": "SalonO",
+          "OperationReturnStringValue": "0"
+        }
+      ]
+    }
+  ]
+}
